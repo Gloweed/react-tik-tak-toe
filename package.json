@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "lint": "next lint",
-    "prettier": "prettier . --write",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "prettier": "prettier . --write"
   },
   "keywords": [],
   "author": "",
@@ -26,7 +24,6 @@
   "devDependencies": {
     "eslint": "9.20.1",
     "eslint-config-next": "15.1.7",
-    "gh-pages": "^6.3.0",
     "prettier": "3.5.0"
   }
 }
