@@ -1,11 +1,14 @@
 {
+  "homepage": "https://gloweed.github.io/react-tik-tak-toe",
   "name": "tic-tac-toe-online",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "lint": "next lint",
-    "prettier": "prettier . --write"
+    "prettier": "prettier . --write",
+    "predeploy": "rm -rf build && npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +26,7 @@
   "devDependencies": {
     "eslint": "9.20.1",
     "eslint-config-next": "15.1.7",
+    "gh-pages": "^6.3.0",
     "prettier": "3.5.0"
   }
 }
