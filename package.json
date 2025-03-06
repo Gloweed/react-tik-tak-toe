@@ -7,7 +7,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "prettier": "prettier . --write",
-    "predeploy": "rm -rf build && npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "keywords": [],
