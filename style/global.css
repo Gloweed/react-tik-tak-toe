@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@theme {
+  --leading-tight: 1.2;
+}
