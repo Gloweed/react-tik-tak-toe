@@ -36,11 +36,9 @@ export function GameOverModal({ winnerSymbol, players }) {
             Вернуться
           </UiButton>
         </Link>
-        <a href="/play">
-          <UiButton size="md" variant="primary">
-            Играть снова
-          </UiButton>
-        </a>
+        <UiButton size="md" variant="primary">
+          Играть снова
+        </UiButton>
       </UiModal.Footer>
     </UiModal>
   );
