@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
  * @param {{
  * children: any,
  * className: string,
- * width: 'md' | 'full',
+ * width: 'sm' |'md' | 'full',
  * isOpen: boolean,
  * onClose: Function
  * }} props
@@ -40,6 +40,7 @@ export function UiModal({
         className={clsx(
           "bg-white rounded-lg min-h-[320px] relative flex flex-col",
           {
+            sm: "max-w-[420px] w-full mx-auto",
             md: "max-w-[640px] w-full mx-auto",
             full: "mx-16",
           }[width],

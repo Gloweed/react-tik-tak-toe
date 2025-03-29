@@ -1,25 +1,15 @@
 import { Header } from "../components/header";
-import { Game } from "../components/game";
-{
-  /*import { UiTextField } from "../components/uikit/fileds/ui-text-field";*/
-}
+import { Main } from "../components/game";
 
 export default function HomePage() {
   return (
-    <HomePageLayout header={<Header />}>
-      {/*<UiTextField
-        label="label"
-        placeholder="placeholder"
-        required
-        helperText="helper text"
-        errorText="Error"
-      />*/}
-      <Game />
+    <HomePageLayout header={<Header variant="primary" isMain />}>
+      <Main />
     </HomePageLayout>
   );
 }
 
-function HomePageLayout({ header, children }) {
+export function HomePageLayout({ header, children }) {
   return (
     <div className="bg-slate-50 min-h-screen">
       {header}

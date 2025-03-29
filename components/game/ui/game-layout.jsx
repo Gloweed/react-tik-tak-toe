@@ -1,6 +1,7 @@
 import { UiButton } from "../../uikit/ui-button";
 
 export function GameLayout({
+  winnerSymbol,
   backLink,
   title,
   gameInfo,
@@ -10,10 +11,10 @@ export function GameLayout({
 }) {
   const actions = (
     <>
-      <UiButton size="md" variant="primary">
+      <UiButton size="md" variant={winnerSymbol ? "disabled" : "primary"}>
         Ничья
       </UiButton>
-      <UiButton size="md" variant="outline">
+      <UiButton size="md" variant={winnerSymbol ? "disabled" : "outline"}>
         Сдаться
       </UiButton>
     </>

@@ -1,9 +1,26 @@
 import { UiModal } from "../../uikit/ui-modal";
 import { UiButton } from "../../uikit/ui-button";
+import Link from "next/link";
+import { useMemo, useState } from "react";
+import { PLAYERS } from "../constains";
 
-export function GameOverModal({ winnerName, players }) {
+export function GameOverModal({ winnerSymbol, players }) {
+  const [winnerPlayer, setWinnerPlayer] = useState();
+
+  useMemo(
+    () =>
+      setWinnerPlayer(PLAYERS.find((player) => player.symbol === winnerSymbol)),
+    [winnerSymbol],
+  );
+
+  const handleCloseModal = () => {
+    setWinnerPlayer(false);
+  };
+
+  const winnerName = winnerPlayer?.name;
+
   return (
-    <UiModal isOpen={winnerName} onClose={() => console.log("close")}>
+    <UiModal isOpen={winnerName} onClose={handleCloseModal}>
       <UiModal.Header>Игра завершена</UiModal.Header>
       <UiModal.Body>
         <div className="text-sm">
@@ -14,12 +31,16 @@ export function GameOverModal({ winnerName, players }) {
         </div>
       </UiModal.Body>
       <UiModal.Footer>
-        <UiButton size="md" variant="outline">
-          Вернуться
-        </UiButton>
-        <UiButton size="md" variant="primary">
-          Играть снова
-        </UiButton>
+        <Link href="/">
+          <UiButton size="md" variant="outline">
+            Вернуться
+          </UiButton>
+        </Link>
+        <a href="/play">
+          <UiButton size="md" variant="primary">
+            Играть снова
+          </UiButton>
+        </a>
       </UiModal.Footer>
     </UiModal>
   );
