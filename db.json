@@ -1,0 +1,37 @@
+{
+  "players": [
+    {
+      "id": "c552",
+      "username": "WidDing",
+      "password": "123456789",
+      "rating": "1000",
+      "symbol": null,
+      "avatar": "/avatars/avatar-1.png"
+    },
+    {
+      "id": "7c6a",
+      "username": "Жук",
+      "password": "123456789",
+      "rating": "1000",
+      "symbol": null,
+      "avatar": "/avatars/avatar-1.png"
+    },
+    {
+      "id": "f503",
+      "username": "Anna",
+      "password": "338",
+      "rating": "1000",
+      "symbol": null,
+      "avatar": "/avatars/avatar-1.png"
+    },
+    {
+      "id": "246f",
+      "username": "Даша",
+      "password": "22",
+      "rating": "1000",
+      "symbol": null,
+      "avatar": "/avatars/avatar-1.png"
+    }
+  ],
+  "games": []
+}

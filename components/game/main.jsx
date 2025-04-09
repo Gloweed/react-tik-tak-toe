@@ -2,8 +2,9 @@ import { useState } from "react";
 import { GAMES } from "./constains";
 import { SymbolSelectionModal } from "../header/symbol-selection-modal";
 import { UiButton } from "../uikit/ui-button";
+import clsx from "clsx";
 
-export function Main() {
+export function Main({ user }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openSymbolSelection = () => {
@@ -13,6 +14,7 @@ export function Main() {
       setIsOpen(true);
     }
   };
+
   return (
     <div className="py-10 text-slate-400/60 text-center text-4xl">
       {!GAMES?.length && "Нет доступных игр"}
@@ -22,7 +24,7 @@ export function Main() {
             <UiButton
               key={game.id}
               size="lg2"
-              variant="outline"
+              variant={clsx(user ? "outline" : "disabled")}
               className="w-[300px] h-[150px] text-start border-2"
               onClick={openSymbolSelection}
             >

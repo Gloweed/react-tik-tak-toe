@@ -9,7 +9,14 @@ import clsx from "clsx";
  * }} props
  */
 
-export function UiButton({ children, className, size, variant, onClick }) {
+export function UiButton({
+  children,
+  className,
+  size,
+  variant,
+  type,
+  onClick,
+}) {
   const buttonClassName = clsx(
     "cursor-pointer transition-colors",
     className,
@@ -26,6 +33,7 @@ export function UiButton({ children, className, size, variant, onClick }) {
   );
   return (
     <button
+      type={type}
       className={buttonClassName}
       onClick={variant !== "disabled" ? onClick : undefined}
     >

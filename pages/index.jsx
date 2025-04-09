@@ -1,10 +1,20 @@
 import { Header } from "../components/header";
 import { Main } from "../components/game";
 
-export default function HomePage() {
+export default function HomePage({ onLogin, onLogout, user }) {
   return (
-    <HomePageLayout header={<Header variant="primary" isMain />}>
-      <Main />
+    <HomePageLayout
+      header={
+        <Header
+          variant={user ? "primary" : "disabled"}
+          onLogin={onLogin}
+          onLogout={onLogout}
+          isMain
+          user={user}
+        />
+      }
+    >
+      <Main user={user} />
     </HomePageLayout>
   );
 }

@@ -1,8 +1,3 @@
-import avatarSrc1 from "./ui/images/avatar-1.png";
-import avatarSrc2 from "./ui/images/avatar-2.png";
-import avatarSrc3 from "./ui/images/avatar-3.png";
-import avatarSrc4 from "./ui/images/avatar-4.png";
-
 export const GAME_SYMBOL = {
   ZERO: "zero",
   CROSS: "cross",
@@ -22,28 +17,28 @@ export const PLAYERS = [
     id: 1,
     name: "WidDing",
     rating: "1230",
-    avatar: avatarSrc1,
+    avatar: "/avatars/avatar-1.png",
     symbol: GAME_SYMBOL.CROSS,
   },
   {
     id: 2,
     name: "MarinaMyravantiks",
     rating: "850",
-    avatar: avatarSrc2,
+    avatar: "/avatars/avatar-2.png",
     symbol: GAME_SYMBOL.ZERO,
   },
   {
     id: 3,
     name: "Anna",
     rating: "1370",
-    avatar: avatarSrc3,
+    avatar: "/avatars/avatar-3.png",
     symbol: GAME_SYMBOL.TRIANGLE,
   },
   {
     id: 4,
     name: "Жук",
     rating: "760",
-    avatar: avatarSrc4,
+    avatar: "/avatars/avatar-4.png",
     symbol: GAME_SYMBOL.SQUARE,
   },
 ];

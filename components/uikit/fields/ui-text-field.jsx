@@ -15,6 +15,7 @@ import { UiFieldMessage } from "./ui-field-message";
 
 export function UiTextField({
   id,
+  typeInput,
   label,
   required,
   helperText,
@@ -27,6 +28,7 @@ export function UiTextField({
       {label && <UiFieldLabel id={id} label={label} required={required} />}
       <UiFieldInput
         id={id}
+        type={typeInput}
         required={required}
         errorText={errorText}
         {...inputProps}

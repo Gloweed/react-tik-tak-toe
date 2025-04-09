@@ -1,7 +1,7 @@
 import Image from "next/image";
 import clsx from "clsx";
 
-export function Profile({ className, name, rating, avatar }) {
+export function Profile({ className, name, rating, avatar, arrow }) {
   return (
     <div
       className={clsx(
@@ -16,6 +16,7 @@ export function Profile({ className, name, rating, avatar }) {
           Рейтинг: {rating}
         </div>
       </div>
+      {arrow}
     </div>
   );
 }
