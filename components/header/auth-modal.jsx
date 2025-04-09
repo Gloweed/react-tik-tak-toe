@@ -11,11 +11,15 @@ export function AuthModal({ onLogin, textButton, isOpen, onClose }) {
     const password = e.target.elements.password.value;
 
     const res = await fetch(
-      `http://localhost:3000/players?username=${username}&password=${password}`,
+      "https://67f66d8c42d6c71cca620115.mockapi.io/api/v1/players",
     );
-    const data = await res.json();
-    if (data.length > 0) {
-      onLogin(data[0]);
+    const users = await res.json();
+    const user = users.find(
+      (u) => u.username === username && u.password === password,
+    );
+
+    if (user) {
+      onLogin(user);
       onClose();
     } else {
       alert("Неверные данные");
@@ -28,11 +32,12 @@ export function AuthModal({ onLogin, textButton, isOpen, onClose }) {
     const password = e.target.elements.password.value;
 
     const res = await fetch(
-      `http://localhost:3000/players?username=${username}`,
+      "https://67f66d8c42d6c71cca620115.mockapi.io/api/v1/players",
     );
     const users = await res.json();
+    const user = users.find((u) => u.username === username);
 
-    if (users.length > 0) {
+    if (user) {
       alert("Пользователь с таким именем уже существует");
       return;
     }
@@ -45,13 +50,16 @@ export function AuthModal({ onLogin, textButton, isOpen, onClose }) {
       avatar: "/avatars/avatar-1.png",
     };
 
-    const createRes = await fetch("http://localhost:3000/players", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const createRes = await fetch(
+      "https://67f66d8c42d6c71cca620115.mockapi.io/api/v1/players",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
       },
-      body: JSON.stringify(newUser),
-    });
+    );
 
     const createdUser = await createRes.json();
     alert("Регистрация прошла успешно!");
